@@ -1,7 +1,6 @@
 'use client';
 import { useState, useEffect } from 'react';
 import { Sidebar } from '@/components/dashboard/sidebar';
-import { Switch } from "@/components/ui/switch";
 import { useTheme } from "next-themes";
 import { useRouter } from 'next/navigation';
 import { LogOut, Moon, Sun } from 'lucide-react';

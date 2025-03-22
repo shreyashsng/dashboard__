@@ -4,7 +4,7 @@ import { useRouter } from 'next/navigation';
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { PostsTable } from '@/components/dashboard/posts-table';
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card } from "@/components/ui/card";
 import { Search, Filter, FileText, Activity } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
@@ -40,9 +40,9 @@ export default function Dashboard() {
       if (!response.ok) throw new Error('Failed to fetch posts');
       const data = await response.json();
       setPosts(data);
-      setFilteredPosts(data); // Initially show all posts
+      setFilteredPosts(data);
       setLoading(false);
-    } catch (err) {
+    } catch (error) {
       setError('Failed to load posts. Please try again later.');
       setLoading(false);
     }

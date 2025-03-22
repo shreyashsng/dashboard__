@@ -1,12 +1,10 @@
 'use client';
 import { useState, FormEvent } from 'react';
-import { useRouter } from 'next/navigation';
 
 export default function LoginPage() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
-  const router = useRouter();
 
   const validateForm = () => {
     console.log('Validating:', { email, password });
@@ -37,11 +35,7 @@ export default function LoginPage() {
       localStorage.setItem('token', mockToken);
       console.log('Token stored:', mockToken);
       
-      // Try this alternative redirect method
       window.location.href = '/dashboard';
-      
-      // Or this one
-      // router.replace('/dashboard');
     } catch (err) {
       console.log('Login error:', err);
       setError('Login failed. Please try again.');
