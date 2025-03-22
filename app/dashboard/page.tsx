@@ -42,7 +42,7 @@ export default function Dashboard() {
       setPosts(data);
       setFilteredPosts(data);
       setLoading(false);
-    } catch (_error) {
+    } catch {
       setError('Failed to load posts. Please try again later.');
       setLoading(false);
     }
